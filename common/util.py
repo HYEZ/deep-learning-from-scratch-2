@@ -124,14 +124,14 @@ def create_co_matrix(corpus, vocab_size, window_size=1):
 def ppmi(C, verbose=False, eps = 1e-8):
     '''PPMI（正の相互情報量）の作成
 
-    :param C: 共起行列
-    :param verbose: 進行状況を出力するかどうか
+    :param C: 동시발생 행렬
+    :param verbose: 진행상황 출력 여부
     :return:
     '''
     M = np.zeros_like(C, dtype=np.float32)
-    N = np.sum(C)
-    S = np.sum(C, axis=0)
-    total = C.shape[0] * C.shape[1]
+    N = np.sum(C) # 전체 발생 횟수
+    S = np.sum(C, axis=0) # 각 단어들의 발생 횟수
+    total = C.shape[0] * C.shape[1] # 행렬의 크기
     cnt = 0
 
     for i in range(C.shape[0]):
