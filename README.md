@@ -16,15 +16,15 @@
 |6|[게이트가 추가된 RNN](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch6)|||
 |7|[RNN을 사용한 문장 생성](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch7)|||
 |8|[어텐션](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch8)|||
-|A|시그모이드 함수와 tanh 함수의 미분|||
+|A|시그모이드 함수와 tanh 함수의 미분|2020.02.15|2020.02.15|
 |B|WordNet 맛보기|||
 |C|GRU||
 
 ## Usage
 ```
 $ cd ch1
-$ python forward_net.py
+$ python layers.py
 
 $ cd ../ch5
-$ python train_nueralnet.py
+$ python train_custom_loop.py
 ```
