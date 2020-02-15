@@ -12,7 +12,7 @@ class TwoLayerNet:
 		W1 = 0.01 * np.random.randn(I, H)
 		b1 = np.zeros(H)
 		W2 = 0.01 * np.random.randn(H, O)
-		b2 = np.zeros(0)
+		b2 = np.zeros(O)
 
 		# 계층 생성
 		self.layers = [
@@ -29,8 +29,8 @@ class TwoLayerNet:
 		for layer in self.layers:
 			self.params += layer.params
 			self.grads += layer.grads 
-		print(self.params)
-
+		# print(self.params[0])
+		# print(self.layers[0].params)
 
 	def predict(self, x):
 		for layer in self.layers:
@@ -46,6 +46,8 @@ class TwoLayerNet:
 		dout = self.loss_layer.backward(dout)
 		for layer in reversed(self.layers):
 			dout = layer.backward(dout)
+		# print(self.params[0])
+		# print(self.layers[0].params)
 		return dout
 
 

@@ -12,7 +12,7 @@ class SGD:
         
     def update(self, params, grads):
         for i in range(len(params)):
-            params[i] -= self.lr * grads[i]
+            params[i] -= self.lr * grads[i] # 매개변수들을 리스트 하나로 통합했기 때문에 가능, 여기 변경하면 각 레이어의 인스턴스 변수 self.params도 바뀜. 주소값이 동일해서 
 
 
 class Momentum:

@@ -8,7 +8,7 @@
 ## 목차
 |챕터|이름|시작일|종료일|
 |:---:|:---|:---:|:---:|
-|1|[신경망 복습](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch1)|2020.02.15||
+|1|[신경망 복습](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch1)|2020.02.15|2020.02.15|
 |2|[자연어와 단어의 분산 표현](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch2)|||
 |3|[word2vec](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch3)|||
 |4|[word2vec 속도 개선](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch4)|||
