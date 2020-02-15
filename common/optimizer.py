@@ -3,7 +3,6 @@ import sys
 sys.path.append('..')
 from common.np import *
 
-
 class SGD:
     '''
     SGD(Stochastic Gradient Descent)
