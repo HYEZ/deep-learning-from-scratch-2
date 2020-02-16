@@ -39,12 +39,12 @@ trainer = Trainer(model, optimizer)
 trainer.fit(contexts, target, max_epoch, batch_size)
 trainer.plot()
 
-# 나중에 사용할 수 있도록 필요한 데이터 저장
+# 나중에 사용할 수 있도록 필요한 데이터 저장 (pickle은 파이썬 코드의 객체를 파일로 저장/읽기가 가능함)
 word_vecs = model.word_vecs
 if config.GPU:
     word_vecs = to_cpu(word_vecs)
 params = {}
-params['word_vecs'] = word_vecs.astype(np.float16)
+params['word_vecs'] = word_vecs.astype(np.float16) # W_in
 params['word_to_id'] = word_to_id
 params['id_to_word'] = id_to_word
 pkl_file = 'cbow_params.pkl'  # or 'skipgram_params.pkl'
