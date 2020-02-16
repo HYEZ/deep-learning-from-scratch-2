@@ -3,6 +3,7 @@ sys.path.append('..')
 from common.trainer import Trainer
 from common.optimizer import Adam
 from simple_cbow import SimpleCBOW
+from simple_skip_gram import SimpleSkipGram
 from common.util import preprocess, create_contexts_target, convert_one_hot
 
 window_size = 1
@@ -19,7 +20,7 @@ target = convert_one_hot(target, vocab_size)
 
 contexts = convert_one_hot(contexts, vocab_size)
 
-model = SimpleCBOW(vocab_size, hidden_size)
+model = SimpleSkipGram(vocab_size, hidden_size)
 optimizer = Adam()
 trainer = Trainer(model, optimizer)
 
