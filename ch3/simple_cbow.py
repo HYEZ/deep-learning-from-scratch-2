@@ -3,7 +3,7 @@ sys.path.append('..')
 import numpy as np
 from common.layers import MatMul, SoftmaxWithLoss
 
-class SipleCBOW:
+class SimpleCBOW:
 	def __init__(self, vocab_size, hidden_size):
 		V, H = vocab_size, hidden_size
 
@@ -22,16 +22,18 @@ class SipleCBOW:
 		self.params, self.grads = [], []
 		for layer in layers:
 			self.params += layer.params
-			slef.grads += layer.grads
+			self.grads += layer.grads
 
 		# 인스턴스 변수에 단어의 분산 표현 저장
-		self.words_vecs = W_in
+		self.word_vecs = W_in
 	
 	def forward(self, contexts, target):
 		h0 = self.in_layer0.forward(contexts[:, 0])
 		h1 = self.in_layer1.forward(contexts[:, 1])
 		h = (h0 + h1) * 0.5
 		score = self.out_layer.forward(h)
+		# print(score)
+		# print(target)
 		loss = self.loss_layer.forward(score, target)
 		return loss
 
