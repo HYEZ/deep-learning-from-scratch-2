@@ -95,8 +95,8 @@ class NegativeSamplingLoss:
         # 부정적인 예 순전파
         negative_label = np.zeros(batch_size, dtype=np.int32) # negative 레이블 = 0
         for i in range(self.sample_size):
-            negative_target = negative_sample[:, i] # i번째 열 가져오기
-            score = self.embed_dot_layers[1 + i].forward(h, negative_target)
+            negative_target = negative_sample[:, i] # i번째 열벡터 가져오기
+            score = self.embed_dot_layers[1 + i].forward(h, negative_target) # h는 모든 계층에 같은 값 줌
             loss += self.loss_layers[1 + i].forward(score, negative_label)
 
         return loss
