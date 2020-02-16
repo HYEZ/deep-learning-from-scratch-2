@@ -23,13 +23,13 @@ h = 0.5 * (h0 + h1)
 s = out_layer.forward(h)
 print(s)
 
-###### input layer 하나로 만들어봄 #####
-c = np.array([[1,0,0,0,0,0,0], [0,0,1,0,0,0,0]])
-in_layer = MatMul(W_in)
-out_layer2 = MatMul(W_out)
+# ###### input layer 하나로 만들어봄 #####
+# c = np.array([[1,0,0,0,0,0,0], [0,0,1,0,0,0,0]])
+# in_layer = MatMul(W_in)
+# out_layer2 = MatMul(W_out)
 
-h2 = in_layer0.forward(c)
-h2 = h2.sum(axis=0)/2
-s2 = out_layer2.forward(h)
-print(s2)
+# h2 = in_layer0.forward(c)
+# h2 = h2.sum(axis=0)/2
+# s2 = out_layer2.forward(h)
+# print(s2)
 
