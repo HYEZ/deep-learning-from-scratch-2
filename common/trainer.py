@@ -139,8 +139,7 @@ class RnnlmTrainer:
 
 def remove_duplicate(params, grads):
     '''
-    パラメータ配列中の重複する重みをひとつに集約し、
-    その重みに対応する勾配を加算する
+    매개변수 갱신할 때 매개변수 중복을 없앰
     '''
     params, grads = params[:], grads[:]  # copy list
 
