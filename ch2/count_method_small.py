@@ -12,16 +12,18 @@ W = ppmi(C)
 
 #SVD
 U, S, V = np.linalg.svd(W)
+print(W.shape, U.shape, S.shape, V.shape)
 
 print('C', C[0]) # 동시발생행렬
 print('W', W[0]) # ppmi
 print('U', U[0]) # SVD
-print('S', S[0]) 
+print('S', S) 
 print('V', V[0])
 print(U[0, :2]) # 차원 감소
-
+K = U[:,:3]
+print(K.shape)
 for word, word_id in word_to_id.items():
 	plt.annotate(word, (U[word_id, 0], U[word_id, 1]))
 
 plt.scatter(U[:,0], U[:,1], alpha=0.5)
-plt.show()
+# plt.show()
