@@ -14,7 +14,6 @@ class CBOW:
         W_in = 0.01 * np.random.randn(V, H).astype('f')
         W_out = 0.01 * np.random.randn(V, H).astype('f')
 
-        # 계층 생성
         self.in_layers = []
         for i in range(2 * window_size):
             layer = Embedding(W_in)  # Embedding layer
