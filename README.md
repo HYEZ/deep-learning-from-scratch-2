@@ -12,7 +12,7 @@
 |2|[자연어와 단어의 분산 표현](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch2)|2020.02.15|2020.02.16|
 |3|[word2vec](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch3)|2020.02.16|2020.02.16|
 |4|[word2vec 속도 개선](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch4)|2020.02.16|2020.02.16|
-|5|[순환 신경망(RNN)](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch5)|2020.02.17||
+|5|[순환 신경망(RNN)](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch5)|2020.02.17|2020.02.18|
 |6|[게이트가 추가된 RNN](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch6)|||
 |7|[RNN을 사용한 문장 생성](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch7)|||
 |8|[어텐션](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch8)|||

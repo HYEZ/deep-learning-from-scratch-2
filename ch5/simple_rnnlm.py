@@ -19,7 +19,7 @@ class SimpleRnnlm:
 		# 계층 생성
 		self.layers = [
 			TimeEmbedding(embed_W),
-			TimeRNN(rnn_Wx, rnn_Wh, rnn_b, stateful=True)
+			TimeRNN(rnn_Wx, rnn_Wh, rnn_b, stateful=True),
 			TimeAffine(affine_W, affine_b)
 		]
 		self.loss_layer = TimeSoftmaxWithLoss()
@@ -40,7 +40,7 @@ class SimpleRnnlm:
 	def backward(self, dout=1):
 		dout = self.loss_layer.backward(dout)
 		for layer in reversed(self.layers):
-			dout = layer,backward(dout)
+			dout = layer.backward(dout)
 		return dout
 
 	def reset_state(self):

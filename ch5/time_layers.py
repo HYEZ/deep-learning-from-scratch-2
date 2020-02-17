@@ -83,7 +83,7 @@ class TimeRNN:
 			dxs[:, t, :] = dx
 
 			for i, grad in enumerate(layer.grads):
-				# RNN 계층들은 같은 가중치를 사용하므로
+				# RNN 계층들은 같은 가중치를 사용하므로(repeat 노드)
 				# TimeRNN의 최종 가중치의 기울기는 각 RNN 계층의 가중치 기울기를 다 더한 것이 됨
 				grads[i] += grad 
 
