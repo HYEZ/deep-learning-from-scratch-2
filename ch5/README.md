@@ -117,7 +117,11 @@
 
 ***
 
-
-
+## RNNLM(RNN Language Model)
+- `RNN`을 사용한 언어 모델
+1. Embedding 계층 : 단어 ID를 분산 표현으로 변환
+2. RNN 계층
+3. Affine 계층
+4. Softmax 계층
 
 
