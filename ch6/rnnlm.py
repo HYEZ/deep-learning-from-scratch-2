@@ -31,29 +31,30 @@ class Rnnlm:
 		    self.params += layer.params
 		    self.grads += layer.grads
 
-		def predict(self, xs):
-			for layer in self.predict(xs):
-				xs = layer.forward(xs)
+	def predict(self, xs):
+		for layer in self.layers:
+		    xs = layer.forward(xs)
 		return xs
 
-		def forward(self, xs, ts):
-			score = self.predict(xs)
-			loss = self.loss_layer.forward(score, ts)
+	def forward(self, xs, ts):
+		score = self.predict(xs)
+		loss = self.loss_layer.forward(score, ts)
+		return loss
 
-		def backward(self, dout=1):
-			dout = self.loss_layer.backward(dout)
-			for layer in reversed(self.layers):
-				dout = layer.backward(dout)
-			return dout
+	def backward(self, dout=1):
+		dout = self.loss_layer.backward(dout)
+		for layer in reversed(self.layers):
+		    dout = layer.backward(dout)
+		return dout
 
-		def reset_state(self):
-			self.lstm_layer.reset_state()
+	def reset_state(self):
+		self.lstm_layer.reset_state()
 
-		def save_params(self, file_name='Rnnlm.pkl'):
-			with open(file_name, 'wb') as f:
-				pickle.dump(self.params, f)
+	def save_params(self, file_name='Rnnlm.pkl'):
+		with open(file_name, 'wb') as f:
+			pickle.dump(self.params, f)
 
-		def load_params(self, file_name='Rnnlm.pkl'):
-			with open(file_name, 'rb') as f:
-				self.params = pickle.load(f)
+	def load_params(self, file_name='Rnnlm.pkl'):
+		with open(file_name, 'rb') as f:
+			self.params = pickle.load(f)
 
