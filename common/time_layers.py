@@ -160,6 +160,7 @@ class LSTM:
 
 
 class TimeLSTM:
+	# T 개분의 시계열 데이터를 한꺼번에 처리
     def __init__(self, Wx, Wh, b, stateful=False):
         self.params = [Wx, Wh, b]
         self.grads = [np.zeros_like(Wx), np.zeros_like(Wh), np.zeros_like(b)]
@@ -205,7 +206,7 @@ class TimeLSTM:
             dx, dh, dc = layer.backward(dhs[:, t, :] + dh, dc)
             dxs[:, t, :] = dx
             for i, grad in enumerate(layer.grads):
-                grads[i] += grad
+                grads[i] += grad # LSTM 레이어는 같은 가중치 사용하므로
 
         for i, grad in enumerate(grads):
             self.grads[i][...] = grad
