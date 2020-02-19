@@ -97,17 +97,9 @@ class TimeRNN:
 
 class LSTM:
     def __init__(self, Wx, Wh, b):
-        '''
-
-        Parameters
-        ----------
-        Wx: 入力`x`用の重みパラーメタ（4つ分の重みをまとめる）
-        Wh: 隠れ状態`h`用の重みパラメータ（4つ分の重みをまとめる）
-        b: バイアス（4つ分のバイアスをまとめる）
-        '''
-        self.params = [Wx, Wh, b]
+        self.params = [Wx, Wh, b] # 4개분의 가중치가 담김 
         self.grads = [np.zeros_like(Wx), np.zeros_like(Wh), np.zeros_like(b)]
-        self.cache = None
+        self.cache = None # 순전파 때 중간 결과를 보관했다가 역전파 계산에 이용
 
     def forward(self, x, h_prev, c_prev):
         Wx, Wh, b = self.params
