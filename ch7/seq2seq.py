@@ -21,24 +21,24 @@ class Encoder:
 		self.grads = self.embed.grads + self.lstm.grads
 		self.hs = None
 
-		def forward(self, xs):
-			xs = self.embed.forward(xs)
-			hs = self.lstm.forward(xs)
-			self.hs = hs
-			return hs[:, -1, :]
+	def forward(self, xs):
+		xs = self.embed.forward(xs)
+		hs = self.lstm.forward(xs)
+		self.hs = hs
+		return hs[:, -1, :]
 
-		def backward(self, dh):
-			dhs = np.zeros_like(self.hs)
-			dhs[:, -1, :] = dh
+	def backward(self, dh):
+		dhs = np.zeros_like(self.hs)
+		dhs[:, -1, :] = dh
 
-			dout = self.lstm.backward(dhs)
-			dout = self.embed.backward(dout)
-			return dout
+		dout = self.lstm.backward(dhs)
+		dout = self.embed.backward(dout)
+		return dout
 
 class Decoder:
 	def __init__(self, vocab_size, wordvec_size, hidden_size):
 		V, D, H = vocab_size, wordvec_size, hidden_size
-		rn = random.randn
+		rn = np.random.randn
 
 		embed_W = (rn(V, D) / 100).astype('f')
 		lstm_Wx = (rn(D, 4*H) / np.sqrt(D)).astype('f')
@@ -106,12 +106,12 @@ class Seq2Seq(BaseModel):
 		return loss
 
 	def backward(self, dout=1):
-		dout = self.softmax.backward(dout)
-		dh = self.decoder.backward(dout)
-		dout = self.encoder.backward(dout)
-		return dout
+	    dout = self.softmax.backward(dout)
+	    dh = self.decoder.backward(dout)
+	    dout = self.encoder.backward(dh)
+	    return dout
 
 	def generate(self, xs, start_id, sample_size):
-		h = self.encoder.forward(xs)
-		sampled = self.decoder.generate(h, start_id, sample_size)
-		return sampled	
+	    h = self.encoder.forward(xs)
+	    sampled = self.decoder.generate(h, start_id, sample_size)
+	    return sampled
