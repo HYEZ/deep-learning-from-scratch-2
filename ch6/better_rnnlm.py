@@ -41,7 +41,7 @@ class BetterRnnlm(BaseModel):
             self.grads += layer.grads
 
     def predict(self, xs, train_flg=False):
-        for layer in self.drop_layers:
+        for layer in self.drop_layeㅈrs:
             layer.train_flg = train_flg
 
         for layer in self.layers:

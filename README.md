@@ -14,7 +14,7 @@
 |4|[word2vec 속도 개선](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch4)|2020.02.16|2020.02.16|
 |5|[순환 신경망(RNN)](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch5)|2020.02.17|2020.02.18|
 |6|[게이트가 추가된 RNN](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch6)|2020.02.19|2020.02.20|
-|7|[RNN을 사용한 문장 생성](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch7)|||
+|7|[RNN을 사용한 문장 생성](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch7)|2020.02.20||
 |8|[어텐션](https://github.com/HYEZ/deep-learning-from-scratch-2/tree/master/ch8)|||
 |A|시그모이드 함수와 tanh 함수의 미분|2020.02.15|2020.02.15|
 |B|WordNet 맛보기|2020.02.15|2020.02.15|
