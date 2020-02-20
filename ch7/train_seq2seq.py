@@ -6,10 +6,12 @@ from dataset import sequence
 from common.optimizer import Adam
 from common.trainer import Trainer
 from seq2seq import Seq2Seq
+from common.util import eval_seq2seq
 # from peeky_seq2seq import PeekySeq2seq
 
 # read dataset
 (x_train, t_train), (x_test, t_test) = sequence.load_data('addition.txt')
+x_train, x_test = x_train[:, ::-1], x_test[:, ::-1] # 배열 반전
 char_to_id, id_to_char = sequence.get_vocab()
 
 # hyper parameters
