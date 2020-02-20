@@ -8,6 +8,7 @@ vocab_size = len(word_to_id)
 corpus_size = len(corpus)
 
 model = RnnlmGen()
+model.load_params('../ch6/Rnnlm.pkl')
 
 start_word = 'you'
 start_id = word_to_id[start_word]
