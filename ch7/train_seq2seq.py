@@ -7,7 +7,7 @@ from common.optimizer import Adam
 from common.trainer import Trainer
 from seq2seq import Seq2Seq
 from common.util import eval_seq2seq
-# from peeky_seq2seq import PeekySeq2seq
+from peeky_seq2seq import PeekySeq2seq
 
 # read dataset
 (x_train, t_train), (x_test, t_test) = sequence.load_data('addition.txt')
@@ -23,7 +23,8 @@ max_epoch = 25
 max_grad = 5.0
 
 # 모델 / 옵티마이저 / 트레이너 생성
-model = Seq2Seq(vocab_size, wordvec_size, hidden_size)
+# model = Seq2Seq(vocab_size, wordvec_size, hidden_size)
+model = PeekySeq2seq(vocab_size, wordvec_size, hidden_size)
 optimizer = Adam()
 trainer = Trainer(model, optimizer)
 
