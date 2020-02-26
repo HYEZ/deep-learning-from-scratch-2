@@ -1,4 +1,4 @@
-import numpu as np
+import numpy as np
 
 class WeightSum:
 	def __init__(self):
