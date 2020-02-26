@@ -95,5 +95,5 @@ class AttentionSeq2seq(Seq2Seq):
 		self.softmax = TimeSoftmaxWithLoss()
 
 		self.params = self.encoder.params + self.decoder.params
-		self.grads = self.encoder.grads + self.deocder.grads
+		self.grads = self.encoder.grads + self.decoder.grads
 

@@ -29,8 +29,8 @@
 ### Decoder 개선 3
 - WeightSum 계층과 AttentionWeight 계층을 하나로 구현 (Attention 계층)
 
-
 ***
 
 
-## 어텐션(Attention)
+## 참고
+- WMT : 번역용 데이터셋 중엔 `WMT`가 유명함
